@@ -13,7 +13,7 @@ public class HundredCalculator {
 
 	public static String calculateThreeDigitString(Long inputValue, boolean lastValue) {
 		StringBuilder sb = new StringBuilder(Constants.EMPTY);
-		if (inputValue > 100) {
+		if (inputValue >= 100) {
 			sb.append(NumberToStringCalculator.calculateSingleDigitString(inputValue / 100) + Constants.HUNDRED);
 			inputValue = inputValue % 100;
 		}
