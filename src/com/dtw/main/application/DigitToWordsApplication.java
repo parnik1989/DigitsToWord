@@ -3,8 +3,7 @@ package com.dtw.main.application;
 import java.util.Scanner;
 
 /**
- * @author Parnik Main Application class to start the application and get the
- *         desired result on the basis of input
+ * @author Parnik Main Application class to start the application -- It takes the input form standard input and respond with relevant output
  */
 public class DigitToWordsApplication {
 
@@ -24,7 +23,6 @@ public class DigitToWordsApplication {
 					} else {
 						throw new Exception();
 					}
-
 				} catch (Exception e) {
 					System.out.println(Constants.VALID_INPUT);
 					Thread.sleep(2000);

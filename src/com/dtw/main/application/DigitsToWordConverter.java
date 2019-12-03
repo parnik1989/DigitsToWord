@@ -1,7 +1,7 @@
 package com.dtw.main.application;
 
 /**
- * @author parni Class Used to Convert Decimal Numbers to English Words
+ * @author parnik Class Used to Convert Decimal Numbers to English Words
  */
 public class DigitsToWordConverter {
 
@@ -15,29 +15,26 @@ public class DigitsToWordConverter {
 			} else if (length > 15) {
 				sb.append(Constants.VALID_INPUT);
 			} else {
-				while (length > 0) {
+				NumberCreater creater = new NumberCreater();
+				while (length > 0 && inputValue > 0) {
 					if (length > 12) {
-						Long trillionValue = inputValue / 1000000000000L;
-						inputValue = inputValue % 1000000000000L;
-						sb.append(DigitsToWordUtilities.getHundreds(trillionValue) + Constants.TRILLION);
+						sb.append(creater.getTrillionValueString(inputValue));
+						inputValue = inputValue % Constants.ONE_TRILLION;
 						length = 12;
 					} else if (length > 9) {
-						Long billionValue = inputValue / 1000000000L;
-						inputValue = inputValue % 1000000000L;
-						sb.append(DigitsToWordUtilities.getHundreds(billionValue) + Constants.BILLION);
+						sb.append(creater.getBillionValueString(inputValue));
+						inputValue = inputValue % Constants.ONE_BILLION;
 						length = 9;
 					} else if (length > 6) {
-						Long millionValue = inputValue / 1000000L;
-						inputValue = inputValue % 1000000L;
-						sb.append(DigitsToWordUtilities.getHundreds(millionValue) + Constants.MILLION);
+						sb.append(creater.getMillionValueString(inputValue));
+						inputValue = inputValue % Constants.ONE_MILLION;
 						length = 6;
 					} else if (length > 3) {
-						Long thousandValue = inputValue / 1000L;
-						inputValue = inputValue % 1000L;
-						sb.append(DigitsToWordUtilities.getHundreds(thousandValue) + Constants.THOUSAND);
+						sb.append(creater.getThousandValueString(inputValue));
+						inputValue = inputValue % Constants.ONE_THOUSAND;
 						length = 3;
 					} else {
-						sb.append(DigitsToWordUtilities.getHundreds(inputValue));
+						sb.append(creater.getHundredValueString(inputValue));
 						length = 0;
 					}
 				}

@@ -2,7 +2,6 @@ package com.dtw.test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 import com.dtw.main.application.DigitsToWordConverter;
@@ -10,11 +9,6 @@ import com.dtw.main.application.DigitsToWordConverter;
 public class ApplicationTest {
 
 	DigitsToWordConverter converter = new DigitsToWordConverter();
-
-	@Before
-	public void steUp() {
-		converter = new DigitsToWordConverter();
-	}
 
 	@Test
 	public void testOneDigitNumberSuccess() {
@@ -28,30 +22,30 @@ public class ApplicationTest {
 
 	@Test
 	public void testThreeDigitNumberSuccess() {
-		assertEquals("One Hundred Twenty One", converter.ConvertNumber(121L, 3));
+		assertEquals("One Hundred And Twenty One", converter.ConvertNumber(121L, 3));
 	}
 
 	@Test
 	public void testThousandNumberSuccess() {
-		assertEquals("Three Thousand One Hundred Twenty One", converter.ConvertNumber(3121L, 4));
+		assertEquals("Three Thousand One Hundred And Twenty One", converter.ConvertNumber(3121L, 4));
 	}
 
 	@Test
 	public void testMillionNumberSuccess() {
-		assertEquals("One Million Three Hundred Twelve Thousand One Hundred Twenty One",
+		assertEquals("One Million Three Hundred Twelve Thousand One Hundred And Twenty One",
 				converter.ConvertNumber(1312121L, 7));
 	}
 
 	@Test
 	public void testBillionNumberSuccess() {
-		assertEquals("Nine Billion Nine Hundred Ninty One Million Three Hundred Twelve Thousand One Hundred Twenty One",
+		assertEquals("Nine Billion Nine Hundred Ninty One Million Three Hundred Twelve Thousand One Hundred And Twenty One",
 				converter.ConvertNumber(9991312121L, 10));
 	}
 
 	@Test
 	public void testTrillionNumberSuccess() {
 		assertEquals(
-				"One Trillion Two Hundred Thirty Nine Billion Nine Hundred Ninty One Million Three Hundred Twelve Thousand One Hundred Twenty One",
+				"One Trillion Two Hundred Thirty Nine Billion Nine Hundred Ninty One Million Three Hundred Twelve Thousand One Hundred And Twenty One",
 				converter.ConvertNumber(1239991312121L, 13));
 	}
 
