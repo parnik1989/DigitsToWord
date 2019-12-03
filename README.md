@@ -13,7 +13,7 @@ Run the main class and enter the desired input to get the respective result in W
 
 Other way is generate the jar file or execute the existing jar file using below command in command prompt (Your system must be having java Installed):
 
-Java -jar <FileName>.jar
+Java -jar DigitsToWord.jar
 
 Input Format:
 123
